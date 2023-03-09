@@ -27,7 +27,10 @@ Elija un opcion: """))
         print(f"Tienes en la cuenta ${saldo} pesos actualmente")
     elif seleccion == 2:
         retiro = int(input("Cuanto deseas retirar?: "))
-        saldo -= retiro
+        if saldo < retiro:
+            print("Saldo insuficiente")
+        else:
+            saldo -= retiro
         print(f"Te queda ${saldo} pesos en la cuenta")
     elif seleccion == 3:
         print(f"En la cuenta tienes ${saldo}")
